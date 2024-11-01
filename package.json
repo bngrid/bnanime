@@ -1,0 +1,19 @@
+{
+  "name": "bnanime",
+  "version": "1.0.0",
+  "author": "banno <bngrid@outlook.com> (https://bngrid.com)",
+  "description": "JavaScript animation engine driven by numerical object",
+  "keywords": [
+    "bngrid",
+    "anime"
+  ],
+  "main": "dist/index.js",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "latest"
+  }
+}
