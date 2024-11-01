@@ -20,7 +20,7 @@ const position = {
   top: 0
 }
 
-const animation = animes({
+const animation = anime({
   // 所有属性的值类型均为number的Javascript对象（必需）
   target: position,
   // 动画参数：方向（类型：'normal' | 'reverse' | 'alternate'，默认：'normal'）
@@ -95,7 +95,7 @@ const position = {
   top: 0
 }
 
-animes({
+anime({
   target: position,
   left: 300,
   top: 300,
@@ -115,7 +115,7 @@ const position = {
   top: 0
 }
 
-animes({
+anime({
   target: position,
   left: 300,
   top: 300,
