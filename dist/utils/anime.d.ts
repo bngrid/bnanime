@@ -1,43 +1,42 @@
-type Option<Target> = {
-    target: {
-        [key in keyof Target]: number;
+export type Option<Object> = {
+    object: {
+        [key in keyof Object]: any;
     };
-    direction?: 'normal' | 'reverse' | 'alternate';
-    loop?: number;
+    total?: number;
+    repeat?: number;
+    alternate?: boolean;
+    direction?: boolean;
     autoplay?: boolean;
-    duration?: number;
     delay?: number;
+    duration?: number;
+    ease?: (x: number) => number;
     round?: number;
-    easing?: (x: number) => number;
-    update?: (anim: Anim<{
-        [key in keyof Target]: number;
-    }>) => void;
-    begin?: (anim: Anim<{
-        [key in keyof Target]: number;
-    }>) => void;
-    complete?: (anim: Anim<{
-        [key in keyof Target]: number;
-    }>) => void;
+    begin?: (anim: Anim<Object>) => void;
+    update?: (anim: Anim<Object>) => void;
+    iterate?: (anim: Anim<Object>) => void;
+    complete?: (anim: Anim<Object>) => void;
 } & {
-    [key in keyof Target]: number | Result;
+    [key in keyof Object]?: number | Value;
 };
-type Result = {
+export type Value = {
     value: number;
-    duration?: number;
     delay?: number;
+    duration?: number;
+    ease?: (x: number) => number;
     round?: number;
-    easing?: (x: number) => number;
 };
-type Anim<Target> = {
-    target: {
-        [key in keyof Target]: number;
-    };
-    progress: number;
+export type Anim<Object> = {
+    object: Object;
+    active: boolean;
     play: () => void;
     pause: () => void;
     restart: () => void;
     reverse: () => void;
-    seek: (x: number) => void;
+    progress: (x?: number) => number;
+    total: (x?: number) => number;
+    repeat: (x?: number) => number;
+    remove: (x: string) => void;
+    revert: (x: string) => void;
 };
-declare const _default: <Target>({ target, direction, loop, autoplay, duration, delay, round, easing, update, begin, complete, ...extra }: Option<Target>) => Anim<Target>;
+declare const _default: <Object>({ object, total, repeat, alternate, direction, autoplay, delay, duration, ease, round, begin, update, iterate, complete, ...extra }: Option<Object>) => Anim<Object>;
 export default _default;

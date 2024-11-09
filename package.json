@@ -1,6 +1,6 @@
 {
   "name": "bnanime",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "author": "banno <bngrid@outlook.com> (https://bngrid.com)",
   "description": "JavaScript animation engine driven by numerical object",
   "keywords": [
